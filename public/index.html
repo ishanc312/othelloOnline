@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>OTHELLO</title>
+</head>
+<body>
+    <div class="left">
+        <h1>SCOREBOARD</h1>
+        <div>
+            <span id="blackScore" class="blackPiece"></span>
+            <p id="whiteScore" class="whitePiece"></p>
+        </div>
+    </div>
+
+    <div class="center">
+        <h1 id="title">OTHELLO</h1>
+        <table id="board">
+            <tr>
+                <td id="0" class="noPiece"></td>
+                <td id="1" class="noPiece"></td>
+                <td id="2" class="noPiece"></td>
+                <td id="3" class="noPiece"></td>
+                <td id="4" class="noPiece"></td>
+                <td id="5" class="noPiece"></td>
+                <td id="6" class="noPiece"></td>
+                <td id="7" class="noPiece"></td>
+            </tr>
+            <tr>
+                <td id="8" class="noPiece"></td>
+                <td id="9" class="noPiece"></td>
+                <td id="10" class="noPiece"></td>
+                <td id="11" class="noPiece"></td>
+                <td id="12" class="noPiece"></td>
+                <td id="13" class="noPiece"></td>
+                <td id="14" class="noPiece"></td>
+                <td id="15" class="noPiece"></td>
+            </tr>
+            <tr>
+                <td id="16" class="noPiece"></td>
+                <td id="17" class="noPiece"></td>
+                <td id="18" class="noPiece"></td>
+                <td id="19" class="noPiece"></td>
+                <td id="20" class="noPiece"></td>
+                <td id="21" class="noPiece"></td>
+                <td id="22" class="noPiece"></td>
+                <td id="23" class="noPiece"></td>
+            </tr>
+            <tr>
+                <td id="24" class="noPiece"></td>
+                <td id="25" class="noPiece"></td>
+                <td id="26" class="noPiece"></td>
+                <td id="27" class="hasPiece"></td>
+                <td id="28" class="hasPiece"></td>
+                <td id="29" class="noPiece"></td>
+                <td id="30" class="noPiece"></td>
+                <td id="31" class="noPiece"></td>
+            </tr>
+            <tr>
+                <td id="32" class="noPiece"></td>
+                <td id="33" class="noPiece"></td>
+                <td id="34" class="noPiece"></td>
+                <td id="35" class="hasPiece"></td>
+                <td id="36" class="hasPiece"></td>
+                <td id="37" class="noPiece"></td>
+                <td id="38" class="noPiece"></td>
+                <td id="39" class="noPiece"></td>
+            </tr>
+            <tr>
+                <td id="40" class="noPiece"></td>
+                <td id="41" class="noPiece"></td>
+                <td id="42" class="noPiece"></td>
+                <td id="43" class="noPiece"></td>
+                <td id="44" class="noPiece"></td>
+                <td id="45" class="noPiece"></td>
+                <td id="46" class="noPiece"></td>
+                <td id="47" class="noPiece"></td>
+            </tr>
+            <tr>
+                <td id="48" class="noPiece"></td>
+                <td id="49" class="noPiece"></td>
+                <td id="50" class="noPiece"></td>
+                <td id="51" class="noPiece"></td>
+                <td id="52" class="noPiece"></td>
+                <td id="53" class="noPiece"></td>
+                <td id="54" class="noPiece"></td>
+                <td id="55" class="noPiece"></td>
+            </tr>
+            <tr>
+                <td id="56" class="noPiece"></td>
+                <td id="57" class="noPiece"></td>
+                <td id="58" class="noPiece"></td>
+                <td id="59" class="noPiece"></td>
+                <td id="60" class="noPiece"></td>
+                <td id="61" class="noPiece"></td>
+                <td id="62" class="noPiece"></td>
+                <td id="63" class="noPiece"></td>
+            </tr>
+        </table>
+
+        <div class="statusBoard">
+            <div id="turnStatus">WELCOME!!!</div>
+            <div id="moveStatus">SELECT AN OPTION!</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <h1>OPTIONS</h1>
+        <button id = "PC" class="options optionClick">PLAY ON THIS PC</button>
+        <button id= "AI" class="options optionClick">PLAY VS AI</button>
+        <button id = "LOBBY" class="options optionClick">CREATE LOBBY</button>
+        <input type="text" id = "JOIN" class="options optionEnter" placeholder="JOIN A ROOM">
+    </div>
+
+    <script type = "module" src="./gameDriver.js"></script> 
+    <script src="/socket.io/socket.io.js"></script>
+</body>
+</html>

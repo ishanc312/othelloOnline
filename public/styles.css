@@ -1,0 +1,171 @@
+body {
+    background-color: rgb(245, 207, 149);
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+
+/* LEFT ELEMENTS */
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.left h1 {
+    font-family: 'Courier New', Courier, monospace; 
+    color: rgb(87, 31, 31);
+    font-size: 40px; 
+    margin: 250px 0px 20px 0px;
+    text-decoration: underline;
+}
+#blackScore,
+#whiteScore {
+    width: 60px;
+    height: 60px;
+    font-size: 45px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+#blackScore {
+    margin-right: 15px;
+    color: white;
+}
+#whiteScore {
+    margin-left: 15px;
+    color: black;
+}
+
+
+/* CENTER ELEMENTS */
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#title {
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 50px; 
+    color: black;
+    margin: 20px 0px 20px 0px;
+}
+#board {
+    border: 5px solid black;
+    margin-bottom: 5px;
+    table-layout: fixed;
+}
+.center td {
+    width: 65px;
+    height: 65px;
+    text-align: center;
+}
+.noPiece,
+.hasPiece {
+    background-color: #48a16d;
+}
+.whitePiece,
+.blackPiece {
+    height: 15px;
+    width: 15px;
+    padding: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.whitePiece {
+    margin: 0px;
+    background-color: white;
+}
+.blackPiece {
+    margin: 0px;
+    background-color: black;
+}
+
+.statusBoard {
+    width: 564px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.statusBoard div {
+    flex: 1;
+    text-align: center;
+    padding: 10px 5px 10px 5px;
+    font-size: 25px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+/* RIGHT ELEMENTS */
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right h1 {
+    color: rgb(87, 31, 31);
+    margin: 80px 0px 20px 0px;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 45px; 
+}
+
+.options {
+    margin: 25px;
+    border: 5px solid black;
+    width: 250px;
+    height: 75px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+}
+.optionClick:hover {
+    border: 5px solid #48a16d;
+}
+.optionEnter {
+    text-align: center;
+    outline: none;
+}
+#PC {
+    background-color: rgb(253, 155, 122);
+}
+#AI {
+    background-color: rgb(230, 176, 236);
+}
+#LOBBY {
+    background-color: rgb(165, 221, 240);
+}
+#JOIN {
+    background-color: rgb(253, 168, 201)
+}
+
+/* SPECIAL CLASSES NECESSARY FOR JS PURPOSES */
+
+.shake {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.75s;
+    color: red;
+}
+  
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.think {
+    font-style: italic;
+    color: red;
+}
