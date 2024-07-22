@@ -8,9 +8,9 @@
 --------------------------------------------------------------------------
 A browser-based recreation of the popular board game Othello. 
 </pre>
+   
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 </div>
-[![License: MIT]
-(https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview ##
 Featuring a colorful yet simplistic UI created utilizing minimal HTML and CSS, this version offers flexible support for three different gamemodes to choose from:
