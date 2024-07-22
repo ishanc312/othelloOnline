@@ -40,7 +40,7 @@ Player1.opponent = Player2;
 Player2.opponent = Player1;
 let currentPlayer = Player1;
 let turn = true;
-const socket = io("104.248.225.13");
+const socket = io("http://localhost:8000");
 
 const ALL_OPTIONS = document.querySelectorAll(".options");
 const PC_OPTION = document.getElementById("PC")
