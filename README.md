@@ -19,6 +19,8 @@ Featuring a colorful yet simplistic UI created utilizing minimal HTML and CSS, t
 - **Player v. AI**: Play against an AI which utilizes a minimax algorithm and evaluates game states with a simple heuristic.
 - **Player v. Player (Online)**: Hit create a lobby to generate a code to share with a friend, who can then join with the code to commence online play. Feature created with the WebSocket protocol, through the Socket.io JS package.
 
+The original version of this project I had created, written in Python, can be found [here](https://github.com/ishanc312/othelloWithBot).
+
 ## Code Breakdown ##
 #### Player v. Player: ####
 ```javascript 
