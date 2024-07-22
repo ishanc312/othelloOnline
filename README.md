@@ -45,7 +45,9 @@ function humanTurn(currentPlayer, pos) {
     }
 }
 ```
-A function which takes in the `currentPlayer` object and the `pos` of the cell the player clicked. If `pos` is not in the list of legal moves, a visual effect is triggered. Otherwise, the scores and board are updated, and the `currentPlayer.opponent` list of legal moves are updated. If the opponent has no moves, the `currentPlayer` can pick a cell again; however, if they have no moves either, `endGame()` is called. 
+A function which takes in the `currentPlayer` object and the `pos` of the cell the player clicked. 
+- If `pos` is not in the list of legal moves, a visual effect is triggered. Otherwise, the scores and board are updated, and the `currentPlayer.opponent` list of legal moves are updated.
+- If the opponent has no moves, the `currentPlayer` can pick a cell again; however, if they have no moves either, `endGame()` is called. 
 
 #### Player v. AI: ####
 ```javascript
@@ -108,7 +110,10 @@ export function botPlayMove(player, board) {
     return playMove(player, optimalPos, board);
 }
 ```
-This recursive `minimax()` function returns a tuple as opposed to a singular value, returning both the heuristic evaluated on a board on which the "optimal" position was played, and the optimal position itself. Then, `botPlayMove()` calls upon the `minimax` function to select an `optimalPos`, and then calls `playMove()` with that `optimalPos`. 
+This recursive `minimax()` function returns a tuple as opposed to a singular value.
+- This tuple is comprised of the value of the heuristic evaluated on a board on which the "optimal" position was played, and the actual optimal position itself.
+- Then, `botPlayMove()` calls upon the `minimax` function to select an `optimalPos`, and then calls `playMove()` with that `optimalPos`.
+- In the actual gameplay loop, similar logic is followed as described in the **Player v. Player** code above; the key difference is that `botPlayMove()` is called following legal play by the (human) player. 
 
 #### Player v. Player (Online) ####
 ```javascript
@@ -117,7 +122,6 @@ async function gameLoop(roomID, gameSocket) {
     const players = [...sockets];
 
     gameSocket.on('playerClickCell', (pos) => {
-        console.log("SERVER-SIDE: A Player selected Position: " + pos);
         gameSocket.emit('tryPos', pos);
     });
 
@@ -130,7 +134,6 @@ async function gameLoop(roomID, gameSocket) {
             flag: true
         }
         gameSocket.to(roomID).emit('yourTurn', data)
-        console.log("PASSED TURN...")
     })
 
     gameSocket.on('alterScoreFlag', (data) => {
@@ -147,7 +150,7 @@ async function gameLoop(roomID, gameSocket) {
 
 }
 ```
-Here are all the server-side event listeners and emitters. 
+Above are all the server-side event listeners and emitters that allow for bidirectional communication with clients in the game room.
 - On `'playerClickCell'`, the server tells the client to play that position, and if the move is legal, the client emits 'passTurn', 'alterScoreFlag', and 'alterStylesFlag'.
 - On `'alterScoreFlag'` and `'alterStylesFlag'`, the server emits `'alterScore'` and `'alterStyles'` to all clients in the room, updating the physical scoreboard and board, alongside the javascript variables associated with each, on their end.
 - On `'passTurn'`, the server tells the client (who just played a position) to `'awaitTurn'`, disabling their ability to click the board. The server then tells the other client it is `'yourTurn'`, re-enabling their ability to click the board.
