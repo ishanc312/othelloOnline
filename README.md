@@ -159,5 +159,5 @@ Here are all the server-side event listeners and emitters.
 - Get Socket.io working with NGINX on the DigitalOcean server I currently have set up
 - Replace the current selection of DOM Elements with JQuery Selectors
 - Add a selector for the difficulty of the AI so it can utilize weaker or stronger heuristic functions
-- Fix some bugginess with the `endGame()` function not calling 
+- Fix some bugginess with the `endGame()` function not calling when it needs to 
 - Implement more interactivity and make the webpage more "fun" with React.js 
