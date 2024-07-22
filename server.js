@@ -59,7 +59,6 @@ async function gameLoop(roomID, gameSocket) {
     const players = [...sockets];
 
     gameSocket.on('playerClickCell', (pos) => {
-        console.log("SERVER-SIDE: A Player selected Position: " + pos);
         gameSocket.emit('tryPos', pos);
     });
 
@@ -72,7 +71,6 @@ async function gameLoop(roomID, gameSocket) {
             flag: true
         }
         gameSocket.to(roomID).emit('yourTurn', data)
-        console.log("PASSED TURN...")
     })
 
     gameSocket.on('alterScoreFlag', (data) => {
@@ -90,7 +88,6 @@ async function gameLoop(roomID, gameSocket) {
 }
 
 io.on("connection", (gameSocket) => {
-    console.log(gameSocket.id);
     createGame(gameSocket);
     playerJoinRoomAttempt(gameSocket);
 });
