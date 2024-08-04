@@ -202,7 +202,6 @@ function onlineTurn() {
 
         if (data.flag) {
             playMove(currentPlayer.opponent, data.pos, BOARD);
-            printBoard(BOARD);
             currentPlayer.moves = getAllLegalMoves(currentPlayer, BOARD);
         }
 
