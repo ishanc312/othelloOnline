@@ -216,7 +216,6 @@ function onlineTurn() {
     });
 
     socket.on('tryPos', (pos) => {
-
         if (!currentPlayer.moves.includes(pos)) {
             shake(document.getElementById("moveStatus"), "INVALID MOVE", "CLICK A SQUARE!");
         } else {

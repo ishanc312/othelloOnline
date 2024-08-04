@@ -88,7 +88,6 @@ async function gameLoop(roomID, gameSocket) {
 }
 
 io.on("connection", (gameSocket) => {
-    console.log(gameSocket.id);
     createGame(gameSocket);
     playerJoinRoomAttempt(gameSocket);
 });
