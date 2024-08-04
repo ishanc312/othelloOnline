@@ -127,7 +127,6 @@ LOBBY_OPTION.addEventListener("click", createRoom)
 JOIN_OPTION.addEventListener("keydown", joinGame);
 
 function endGame() {
-    console.log("GAME OVER!");
     CELLS.forEach(cell => cell.replaceWith(cell.cloneNode(true)));
     initializeEndScreen();
 }
@@ -217,12 +216,10 @@ function onlineTurn() {
     });
 
     socket.on('tryPos', (pos) => {
-        console.log("FLAG! tryPos listener is working");
 
         if (!currentPlayer.moves.includes(pos)) {
             shake(document.getElementById("moveStatus"), "INVALID MOVE", "CLICK A SQUARE!");
         } else {
-            console.log("MOVE IS PERMITTED!")
             let brackets = playMove(currentPlayer, pos, BOARD);
             currentPlayer.opponent.moves = getAllLegalMoves(currentPlayer.opponent, BOARD);
             let data = {
@@ -254,7 +251,6 @@ function onlineTurn() {
 
     socket.on('alterStyles', (data) => {
         alterStyles(data.color, data.bracket, data.blackScore, data.whiteScore);
-        console.log("STYLES ALTERED FOR ALL PLAYERS!");
     });
 
     socket.on('endGame', () => {
@@ -281,6 +277,5 @@ function PVPLoop(e) {
 
 function onlineLoop(e) {
     let pos = parseInt(e.target.id);
-    console.log("PLAYER PICKED THE CELL: " + pos);
     socket.emit('playerClickCell', pos);
 }
