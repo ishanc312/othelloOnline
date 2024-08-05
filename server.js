@@ -1,14 +1,16 @@
+const http = require("http");
 const express = require("express");
+const socket = require("socket.io");
+
 const app = express();
+const server = http.createServer(app);
+const io = socket(server);
 const PORT = 8000;
 
-const http = require("http").Server(app);
-const io = require("socket.io")(http);
+app.use(express.static("public"));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 let turn = true;
-
-app.use(express.static("public"));
-http.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 function createGame(gameSocket) {
     gameSocket.on('createRoom', () => {
