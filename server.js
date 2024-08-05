@@ -1,18 +1,14 @@
 const express = require("express");
-const socket = require("socket.io");
-const http = require("http");
-
 const app = express();
 const PORT = 8000;
-const server = http.createServer(app);
-const io = socket(server);
-// Maybe the error is within utilizing HTTP?
-// Why does Networking exist 
+
+const http = require("http").Server(app);
+const io = require("socket.io")(http);
 
 let turn = true;
 
 app.use(express.static("public"));
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+http.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 function createGame(gameSocket) {
     gameSocket.on('createRoom', () => {
