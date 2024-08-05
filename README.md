@@ -163,8 +163,9 @@ Above are all the server-side event listeners and emitters that allow for bidire
 - **Server**: Node.js, Express, Socket.io 
 
 ## Roadmap ##
-- Set up a CI/CD Pipeline
-- Fix some bugginess with the `endGame()` function not calling when it needs to
+- Set up a CI/CD Pipeline for my own sanity 
+- Fix bugginess with the scoreboard innacurately displaying massive numbers 
+- Fix bugginess with the `endGame()` function not calling when it needs to
 - Add a selector for the difficulty of the AI so it can utilize weaker/stronger heuristic functions
 - Replace the Vanilla JS DOM Selectors with JQuery Selectors 
 - Implement more interactivity and make the webpage more "fun" with React.js 
