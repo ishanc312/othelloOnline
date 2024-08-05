@@ -164,8 +164,7 @@ Above are all the server-side event listeners and emitters that allow for bidire
 
 ## Roadmap ##
 - Set up a CI/CD Pipeline for my own sanity 
-- Ensure the ability to play over long distances without weird behavior 
 - Fix bugginess with the `endGame()` function not calling when it needs to
+- Indicator to alert the user if their opponent has left the game 
 - Add a selector for the difficulty of the AI so it can utilize weaker/stronger heuristic functions
-- Replace the Vanilla JS DOM Selectors with JQuery Selectors 
-- Implement more interactivity and make the webpage more "fun" with React.js 
+- Ensure the ability to play over long distances without weird behavior 
