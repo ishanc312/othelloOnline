@@ -164,7 +164,7 @@ Above are all the server-side event listeners and emitters that allow for bidire
 
 ## Roadmap ##
 - Set up a CI/CD Pipeline for my own sanity 
-- Fix bugginess with the scoreboard innacurately displaying massive numbers 
+- Ensure the ability to play over long distances without weird behavior 
 - Fix bugginess with the `endGame()` function not calling when it needs to
 - Add a selector for the difficulty of the AI so it can utilize weaker/stronger heuristic functions
 - Replace the Vanilla JS DOM Selectors with JQuery Selectors 
