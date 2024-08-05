@@ -5,10 +5,13 @@ const http = require("http");
 const app = express();
 const PORT = 8000;
 const server = http.createServer(app);
+const io = socket(server);
+// Maybe the error is within utilizing HTTP?
+// Why does Networking exist 
+
 let turn = true;
 
 app.use(express.static("public"));
-const io = socket(server);
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 function createGame(gameSocket) {
