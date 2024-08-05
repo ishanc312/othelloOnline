@@ -166,5 +166,5 @@ Above are all the server-side event listeners and emitters that allow for bidire
 - Set up a CI/CD Pipeline for my own sanity 
 - Fix bugginess with the `endGame()` function not calling when it needs to
 - Indicator to alert the user if their opponent has left the game 
-- Add a selector for the difficulty of the AI so it can utilize weaker/stronger heuristic functions
+- Add a selector for the difficulty of the AI, implemented through the usage of different heuristic functions
 - Ensure the ability to play over long distances without weird behavior 
